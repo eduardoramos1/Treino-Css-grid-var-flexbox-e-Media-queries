@@ -1,0 +1,336 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css?family=Felipa');
+
+:root {
+
+    --light: #b9b9b9;
+    --dark: #181818;
+    --deepDark: #0f0f0f;
+    --box-shadow: 1px 1px 5px black;
+
+}
+
+* {
+    margin:0px;
+    padding: 0px;
+}
+
+html {
+  
+    box-sizing: border-box;
+    
+}
+
+body {
+    background: linear-gradient(to right, rgb(82, 81, 81), rgb(53, 52, 52));
+    font-family: 'Felipa', cursive;
+   
+    color: var(--light);
+}
+
+li {
+
+    list-style: none;
+
+}
+
+div.wrapper {
+    margin: 40px;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        'nav-menu';
+}
+
+
+/* Cabeçalho */
+nav.nav-menu ul{
+    
+    display: grid;
+    padding: 0;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+    text-align: center;
+    grid-area: 'nav-menu';
+    
+}
+
+nav.nav-menu ul li{
+    
+    background-color: var(--dark);
+    box-shadow: var(--box-shadow);
+    
+
+}
+
+
+nav.nav-menu ul li:hover{
+
+    background-color: black;
+    color: white;
+
+}
+
+
+
+nav.nav-menu ul a{
+
+    text-decoration: none;
+    color: var(--light);
+    font-size: 1.5rem;
+
+   
+
+
+}
+
+/* Caixa de informações */
+
+section.content-box {
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 1rem;
+    grid-template-areas: 
+        'image-content-box box-top'
+        'image-content-box box-bottom';
+
+}
+
+
+div.content-box-text {
+
+    background-image: url("/imgs/food-img.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    grid-area: image-content-box;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--dark);
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.box-top {
+    background-color: var(--deepDark);
+    padding: 50px;
+    font-size: 1.2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 25px;
+    grid-area: box-top;
+
+    display: flex;
+    align-items: center;
+
+}
+
+div.box-bottom {
+
+    grid-area: box-bottom;
+    background-color: var(--deepDark);
+    padding: 20px;
+    font-size: 1.0rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 25px;
+
+    display: flex;
+    align-items: flex-end;
+
+}
+
+
+
+
+
+
+/* galeria */
+
+section.gallery {
+
+    background-color: var(--deepDark);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    row-gap: 0.4rem;
+    border-radius: 25px;
+   
+    
+  
+
+}
+
+section.gallery img{
+
+    width: 300px;
+    height: 200px;
+
+}
+
+
+/* Contato */
+
+section.contact {
+
+    display: flex;
+    justify-content: space-between;
+     
+
+}
+
+
+
+div.information {
+
+    background-color: var(--deepDark);
+    box-shadow: var(--box-shadow);
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 50px;
+    flex-basis: 35vw;
+    text-align: left;
+    font-size:1.4rem;
+    height: 137px;
+}
+
+
+
+div.information ul{
+
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+div.map {
+   align-self: stretch;
+   flex-basis: 35vw;
+   padding: 50px;
+   background-color: var(--deepDark);
+   box-shadow: var(--box-shadow);
+   border: 1px solid black;
+   border-radius: 25px; 
+}
+
+/* Rodapé */
+
+footer.footer{
+
+    margin: 1rem 0 0;
+    background-color: var(--deepDark);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+
+/* Responsividade */
+
+@media(max-width:700px) {
+
+
+    div.wrapper {
+
+/*cabecalho  */
+
+    }
+
+    nav.nav-menu ul{
+
+        grid-template-columns: 1fr;
+        grid-gap: 0.5rem;
+
+    }
+
+    /* Informação */
+    section.content-box {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+        grid-template-areas: 
+            'image-content-box '
+            'box-top'
+            'box-bottom';
+    
+    }
+
+    div.content-box-text h2 {
+
+        margin-top: 2rem;
+
+    }
+
+    div.box-top {
+
+        padding: 25px;
+        font-size: 1rem;
+
+    }
+
+    div.box-bottom {
+
+        padding: 25px;
+
+    }
+
+
+    /* galeria */
+
+
+    /* contato */
+
+
+    section.contact {
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        
+    }
+    
+    
+    
+    div.information {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    
+    
+    
+    div.information ul{
+    
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+    
+
+}
+
+
+@media(max-width:500px) {
+
+    div.wrapper {
+
+        margin: 5px;
+
+    }
+
+}

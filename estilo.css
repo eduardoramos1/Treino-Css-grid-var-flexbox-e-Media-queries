@@ -101,7 +101,7 @@ section.content-box {
 
 div.content-box-text {
 
-    background-image: url("/imgs/food-img.jpg");
+    background-image: url("food-img.jpg");
     background-size: cover;
     background-position: center;
     min-height: 500px;
